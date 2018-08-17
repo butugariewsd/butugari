@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Butu Gari</title>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/5.3.1/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/5.3.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.3.1/firebase-database.js"></script>
+    <script defer src="/__/firebase/5.3.1/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/5.3.1/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+</head>
+
+<body>
+
+    <!-- header -->
+    <header>
+        <!-- logo/title wrapper -->
+        <div class="title-wrapper">
+            <img src="images/logo.png" alt="ButuGari Logo">
+            <div class="main-title">
+                <h1>ButuGari</h1>
+                <h3>Drive Together</h3>
+            </div>
+        </div>
+        <!-- display name and signin/singout -->
+        <div class="login-wrapper">
+            <h4 id="display-name"></h4>
+            <button id="signin">Sign In</button>
+            <button id="signout" style="display: none">Sign Out</button>
+        </div>
+    </header>
+
+    <!-- main content block  (signin required) -->
+    <section id="main-content" style="display: none">
+        <!-- broadcast/request buttons -->
+        <div class="ride-buttons">
+            <button id="broadcast">Broadcast</button>
+            <button id="request">Request</button>
+        </div>
+
+        <!-- wrapper for ride-sharing info (must be broadcasting/requesting) -->
+        <div id="main-info-wrapper" style="display: none">
+            <!-- status, map, address -->
+            <div id="map-info">
+                <p id="status"></p>
+                <iframe id="map" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                </iframe>
+                <p id="address"></p>
+            </div>
+            <!-- broadcasting list -->
+            <div class="list-container">
+                <h3>Broadcasting</h3>
+                <div id="broadcasting-info"></div>
+            </div>
+            <!-- requesting list -->
+            <div class="list-container">
+                <h3>Requesting</h3>
+                <div id="requesting-info"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+        <!-- firebase status -->
+        <p id="firebase-load">Firebase SDK Loading&hellip;</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
